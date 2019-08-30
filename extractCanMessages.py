@@ -84,5 +84,4 @@ def run(fileName):
 
 if __name__ == '__main__':
     pass
-    #run(r"C:\Users\tyler.vu\Desktop\Stuff\Python\dean\F9LX-300 CVTS NVM dnld 25OCT2018.txt")
     

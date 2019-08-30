@@ -50,5 +50,5 @@ def populateWorkbook(workbook, dataList):
     
 
 if __name__ == '__main__':
-    fileName = extractCanMessages.createDataList(r"C:\Users\tyler.vu\Desktop\Stuff\Python\deanDataExtraction\original files\F9LX-300 CVTS NVM dnld 25OCT2018.txt")
+    fileName = extractCanMessages.createDataList(r"[inputfilehere]")
     convertToExcel("dataTemplate.xlsx",fileName)
