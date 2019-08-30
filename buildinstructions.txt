@@ -1,0 +1,27 @@
+[To build software in PyInstaller using --onefile with data]
+
+step 1: Add the below codes to your python file with importing sys and os.
+
+def resource_path(relative_path):
+""" Get absolute path to resource, works for dev and for PyInstaller """
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
+
+step 2: Call the above function with adding the path of your file:
+
+image_path = resource_path("Converter-GUI.ico")
+
+step 3: Write the above variable that call the function to where your codes need the path. In my case it's:
+
+    self.window.iconbitmap(image_path)
+
+step 4: Open the console in the same directory of your python file, write the codes like below:
+
+    pyinstaller --onefile your_file.py
+
+step 5: Open the .spec file of the python file and append the a.datas array and add the icon to the exe class, which was given above before the edit in 3'rd step.
+step 6: Save and exit the path file. Go to your folder which include the spec and py file. Open again the console window and type the below command:
+
+    pyinstaller your_file.spec
+
+After the 6. step your one file is ready to use.
